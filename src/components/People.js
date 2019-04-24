@@ -18,9 +18,9 @@ const People = () => {
 				<>
 					<Segment key={p.created}>{p.name}</Segment>
 					<Segment.Group>
-						<Segment><Species /></Segment>
+						<Segment><Species url={p.species}/></Segment>
 						<Segment><Planet url={p.homeworld} /></Segment>
-						<Segment><Starships /></Segment>
+						<Segment><Starships urlArr={p.starships}/></Segment>
 					</Segment.Group>
 				</>
 			)
