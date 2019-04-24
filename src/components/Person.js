@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, } from 'react'
 import {Segment, Button, Icon, } from 'semantic-ui-react'
 import Species from './Species'
 import Planet from './Planet'
