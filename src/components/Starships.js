@@ -1,16 +1,20 @@
 import React, {useState, useEffect,} from 'react'
 import axios from 'axios'
+import Starship from './Starship'
 
 const Starships = ({ urlArr, }) => {
-	const [starships, setStarships] = useState([])
+	const [starships, setStarships] = useState(urlArr)
 	
-	useEffect( () => {
-		urlArr.map( url => axios.get(url).then(res => setStarships(starships, {...res.data})))
-	}, []
-	)
+	const renderShips = () => {
+		return starships.map( url => {
+			return <Starship url={url} />
+		})
+	}
 
 	return (
-		<p></p>
+		<>
+			{renderShips()}
+		</>
 	)
 }
 export default Starships;

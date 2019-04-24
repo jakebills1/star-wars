@@ -20,7 +20,7 @@ const Person = ({ name, species, homeworld, starships, }) => {
 				<Segment.Group>
 					<Segment><Species url={species}/></Segment>
 					<Segment><Planet url={homeworld} /></Segment>
-					<Segment><Starships urlArr={starships}/></Segment>
+					<Segment>Starships used: <Segment.Group> <Starships urlArr={starships}/></Segment.Group></Segment>
 				</Segment.Group>
 			}
 		</>
