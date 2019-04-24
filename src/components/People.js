@@ -1,5 +1,9 @@
 import React, { useState, useEffect,} from 'react'
 import axios from 'axios'
+import { Segment, Container, } from 'semantic-ui-react';
+import Planet from './Planet'
+import Species from './Species'
+import Starships from './Starships'
 
 const People = () => {
 	const [people, setPeople] = useState([]);
@@ -10,16 +14,26 @@ const People = () => {
 
 	const renderPeople = () => (
 		people.map( p => {
-			return <li key={p.created}>{p.name}</li>
+			return (
+				<>
+					<Segment key={p.created}>{p.name}</Segment>
+					<Segment.Group>
+						<Segment><Species /></Segment>
+						<Segment><Planet url={p.homeworld} /></Segment>
+						<Segment><Starships /></Segment>
+					</Segment.Group>
+				</>
+			)
 		}
 		)
 	)
+
 	return (
-		<div>
-			<ul>
+		<Container>
+			<Segment.Group>
 				{renderPeople()}
-			</ul>
-		</div>
+			</Segment.Group>
+		</Container>
 	)
 }
 export default People;
