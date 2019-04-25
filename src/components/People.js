@@ -6,9 +6,14 @@ import Person from './Person'
 const People = () => {
 	const [people, setPeople] = useState([]);
 	useEffect( () => {
-		axios.get("https://swapi.co/api/people/").then( res => setPeople(res.data.results))
+		axios.get(`https://swapi.co/api/people/?page=${getRandomInt(9)}`).then( res => setPeople(res.data.results))
 	}, []
 	)
+
+	const getRandomInt= (max) =>  {
+		return Math.floor(Math.random() * Math.floor(max));
+	}
+
 
 	const renderPeople = () => (
 		people.map( p => {
