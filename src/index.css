@@ -6,7 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-	background-image: url("./jeremy-thomas-98201-unsplash.jpg");
+	background-image: url(./jeremy-thomas-98201-unsplash.jpg) !important;
+	background-position: center;
 }
 
 code {

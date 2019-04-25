@@ -25,7 +25,7 @@ const People = () => {
 	)
 
 	return (
-		<Container>
+		<Container style={{ marginTop: "20px", }}>
 			<Segment.Group>
 				{renderPeople()}
 			</Segment.Group>

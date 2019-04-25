@@ -1,9 +1,8 @@
-import React, {useState, useEffect,} from 'react'
-import axios from 'axios'
+import React, {useState, } from 'react'
 import Starship from './Starship'
 
 const Starships = ({ urlArr, }) => {
-	const [starships, setStarships] = useState(urlArr)
+	const [starships, ] = useState(urlArr)
 	
 	const renderShips = () => {
 		return starships.map( url => {
@@ -13,7 +12,7 @@ const Starships = ({ urlArr, }) => {
 
 	return (
 		<>
-			{renderShips()}
+			{ starships.length > 0 ? renderShips() : <div>None</div>}
 		</>
 	)
 }
